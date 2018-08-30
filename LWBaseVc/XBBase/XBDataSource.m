@@ -36,7 +36,13 @@
     return self.array.count > indexPath.row ? self.array[indexPath.row] : nil;
 }
 
+#pragma mark - tableViewDataSource
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return self.rowArray.count;
+}
+
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
     return self.array.count;
 }
 
@@ -49,13 +55,33 @@
         self.cellRoom(cell, model,indexPath);
     }
     
-//    if ([cell respondsToSelector:@selector(configureCellWithModel:)]) {
-//        [cell performSelector:@selector(configureCellWithModel:) withObject:model];
-//    }
     
     return cell;
     
 }
+
+#pragma mark - collectionDataSource
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
+    return self.rowArray.count==0?1:self.rowArray.count;
+}
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+{
+    return self.array.count;
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:self.cellIdentifier forIndexPath:indexPath];
+    id model = [self modelAtIndexPath:indexPath];
+    
+    
+    if(self.cellRoom) {
+        self.cellRoom(cell, model,indexPath);
+    }
+    return cell;
+}
+
 
 
 
@@ -65,6 +91,13 @@
         _array = @[].mutableCopy;
     }
     return _array;
+}
+
+- (NSArray *)rowArray{
+    if (!_rowArray){
+        _rowArray = @[].copy;
+    }
+    return _rowArray;
 }
 
 @end

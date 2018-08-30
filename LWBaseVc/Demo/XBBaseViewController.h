@@ -11,6 +11,7 @@
 @interface XBBaseViewController : UIViewController
 
 @property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, strong) UICollectionView *collectionView;
 
 @property (nonatomic, strong) NSMutableArray *tablewArray;
 

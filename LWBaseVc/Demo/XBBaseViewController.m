@@ -10,11 +10,12 @@
 #import "XBDataSource.h"
 #import "XBDelegate.h"
 #import "LWTableViewCell.h"
+#import "LWCollectionViewCell.h"
 #import "LWModel.h"
 
 
 
-@interface XBBaseViewController ()<UITableViewDelegate>
+@interface XBBaseViewController ()<UITableViewDelegate,UICollectionViewDelegate>
 
 @property (nonatomic, strong) XBDataSource *dataSource;
 @property (nonatomic, strong) XBDelegate *delegate;
@@ -28,6 +29,27 @@ static NSString * const cell = @"isCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    BOOL is = NO;
+    
+    is?[self initTableView]:[self initCollectionView];
+    
+}
+
+#pragma mark - delegate
+//- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+//
+//    NSLog(@"%@",self);
+//
+//}
+
+
+//- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+//    NSLog(@"%@",self);
+//}
+
+#pragma mark - init
+/**tableview相关*/
+- (void)initTableView{
     
     //cell 的创建
     self.dataSource.cellRoom = ^(id cell, id model, NSIndexPath *indexPath) {
@@ -36,20 +58,28 @@ static NSString * const cell = @"isCell";
         lwCell.textLabel.text = lwModel.name;
         
     };
+
     //cell的点击
-    self.delegate.selectedCell = ^(UITableView *tableView, NSIndexPath *indexPath) {
-        NSLog(@"%@",self);
+    __weak __typeof(&*self)weakself = self;
+    self.delegate.selectedCell = ^(id tableView, NSIndexPath *indexPath) {
+        NSLog(@"%@",weakself);
     };
     [self.dataSource addArray:self.tablewArray];
     [self.view addSubview:self.tableView];
 }
 
-
-//- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-//
-//    NSLog(@"%@",self);
-//
-//}
+/**collectionView相关*/
+- (void)initCollectionView{
+    
+    self.dataSource.cellRoom = ^(id cell, id model, NSIndexPath *indexPath) {
+        LWCollectionViewCell *lwCell = (LWCollectionViewCell *)cell;
+        LWModel *lwModel = (LWModel *)model;
+        lwCell.nameLabel.text = lwModel.name;
+        
+    };
+    [self.dataSource addArray:self.tablewArray];
+    [self.view addSubview:self.collectionView];
+}
 
 #pragma mark - lazy load
 - (NSMutableArray *)tablewArray{
@@ -90,6 +120,20 @@ static NSString * const cell = @"isCell";
         _delegate = [[XBDelegate alloc]init];
     }
     return _delegate;
+}
+
+- (UICollectionView *)collectionView{
+    if (!_collectionView){
+        UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc]init];
+        [layout setScrollDirection:UICollectionViewScrollDirectionVertical];
+        layout.itemSize = CGSizeMake(100, 100);
+        _collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 90, self.view.frame.size.width, self.view.frame.size.height-90) collectionViewLayout:layout];
+        [_collectionView registerClass:[LWCollectionViewCell class] forCellWithReuseIdentifier:cell];
+        _collectionView.dataSource = self.dataSource;
+        _collectionView.delegate = self.delegate;
+        self.delegate.viewController = self;
+    }
+    return _collectionView;
 }
 
 @end

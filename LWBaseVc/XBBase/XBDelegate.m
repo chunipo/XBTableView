@@ -27,6 +27,7 @@
     return [super respondsToSelector:aSelector] || [self.viewController respondsToSelector:aSelector];
 }
 
+#pragma mark - tableViewDelegate
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     NSLog(@"%@",self);
@@ -52,6 +53,18 @@
     
     if ([cell respondsToSelector:@selector(setLayoutMargins:)]) {
         [cell setLayoutMargins:UIEdgeInsetsZero];
+    }
+}
+
+#pragma mark - collectionViewDelegate
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    NSLog(@"%@",self);
+    //    如果需要在类里重新实现方法，可是使用这个
+    //    if([self respondsToSelector:@selector(collectionView:didSelectRowAtIndexPath:)]) {
+    //        [self.viewController collectionView:collectionView didSelectRowAtIndexPath:indexPath];
+    //    }
+    if (self.selectedCell){
+        self.selectedCell(collectionView, indexPath);
     }
 }
 
