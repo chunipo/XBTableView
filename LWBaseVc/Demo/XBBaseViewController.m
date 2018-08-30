@@ -45,6 +45,12 @@ static NSString * const cell = @"isCell";
 }
 
 
+//- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+//
+//    NSLog(@"%@",self);
+//
+//}
+
 #pragma mark - lazy load
 - (NSMutableArray *)tablewArray{
     if (!_tablewArray){

@@ -18,6 +18,7 @@
 		1A545D772137D68C00C5133A /* LWTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A545D762137D68C00C5133A /* LWTableViewCell.m */; };
 		1A545D7D2137E0AB00C5133A /* LWModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A545D7C2137E0AB00C5133A /* LWModel.m */; };
 		1A545D802137F04E00C5133A /* XBDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A545D7F2137F04E00C5133A /* XBDelegate.m */; };
+		1A545D842137F68D00C5133A /* 使用说明 in Resources */ = {isa = PBXBuildFile; fileRef = 1A545D832137F68D00C5133A /* 使用说明 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		1A545D7C2137E0AB00C5133A /* LWModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LWModel.m; sourceTree = "<group>"; };
 		1A545D7E2137F04E00C5133A /* XBDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XBDelegate.h; sourceTree = "<group>"; };
 		1A545D7F2137F04E00C5133A /* XBDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XBDelegate.m; sourceTree = "<group>"; };
+		1A545D832137F68D00C5133A /* 使用说明 */ = {isa = PBXFileReference; lastKnownFileType = text; path = "使用说明"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 		1A545D2B21369E9F00C5133A = {
 			isa = PBXGroup;
 			children = (
+				1A545D832137F68D00C5133A /* 使用说明 */,
 				1A545D3621369E9F00C5133A /* LWBaseVc */,
 				1A545D3521369E9F00C5133A /* Products */,
 			);
@@ -250,6 +253,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A545D842137F68D00C5133A /* 使用说明 in Resources */,
 				1A545D4421369EA100C5133A /* LaunchScreen.storyboard in Resources */,
 				1A545D4121369EA100C5133A /* Assets.xcassets in Resources */,
 				1A545D3F21369E9F00C5133A /* Main.storyboard in Resources */,

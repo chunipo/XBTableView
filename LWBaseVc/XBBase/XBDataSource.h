@@ -13,13 +13,13 @@ typedef void (^CellRoom)(id cell, id model, NSIndexPath * indexPath);
 //适合一级数组
 @interface XBDataSource : NSObject <UITableViewDataSource>
 
-/* 创建方法 */
+/** 创建方法 */
 - (id)initWithIdentifier:(NSString *)identifier;
 
-
+/** cell 的创建 */
 @property (nonatomic, copy) CellRoom cellRoom;
 
-
+/** 数据 */
 - (void)addArray:(NSArray *)modelArray;
 
 @end

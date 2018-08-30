@@ -1,0 +1,5 @@
+1.UITableViewDataSource ---> XBDataSource
+不需要再在控制器里添加其代理，只需要创建时给 ID，block 回调中处理返回的 cell 即可；
+
+2.UITableViewDelegate ---> XBDelegate
+如果不需要复写代理方法，可以在 block 回调里处理即可；如果需要复写代理方法，在控制器中还需要添加协议 UITableViewDelegate 的协议，并且将控制器本身的 self 传给 XBDelegate 里的 viewController 即可；
