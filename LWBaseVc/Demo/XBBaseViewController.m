@@ -29,22 +29,21 @@ static NSString * const cell = @"isCell";
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    //cell 的创建
     self.dataSource.cellRoom = ^(id cell, id model, NSIndexPath *indexPath) {
         LWTableViewCell *lwCell = (LWTableViewCell *)cell;
         LWModel *lwModel = (LWModel *)model;
         lwCell.textLabel.text = lwModel.name;
         
     };
+    //cell的点击
+    self.delegate.selectedCell = ^(UITableView *tableView, NSIndexPath *indexPath) {
+        NSLog(@"%@",self);
+    };
     [self.dataSource addArray:self.tablewArray];
     [self.view addSubview:self.tableView];
 }
 
-
-- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    NSLog(@"%@",self);
-    
-}
 
 #pragma mark - lazy load
 - (NSMutableArray *)tablewArray{

@@ -30,8 +30,12 @@
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     NSLog(@"%@",self);
-    if([self respondsToSelector:@selector(tableView:didSelectRowAtIndexPath:)]) {
-        [self.viewController tableView:tableView didSelectRowAtIndexPath:indexPath];
+//    如果需要在类里重新实现方法，可是使用这个
+//    if([self respondsToSelector:@selector(tableView:didSelectRowAtIndexPath:)]) {
+//        [self.viewController tableView:tableView didSelectRowAtIndexPath:indexPath];
+//    }
+    if (self.selectedCell){
+        self.selectedCell(tableView, indexPath);
     }
 }
 

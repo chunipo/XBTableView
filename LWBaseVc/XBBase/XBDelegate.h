@@ -13,4 +13,6 @@
 
 @property (nonatomic, weak) id <UITableViewDelegate>viewController;
 
+@property (nonatomic, copy) void (^selectedCell)(UITableView *tableView,NSIndexPath *indexPath);
+
 @end

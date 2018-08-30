@@ -13,8 +13,6 @@
 		1A545D4121369EA100C5133A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A545D4021369EA100C5133A /* Assets.xcassets */; };
 		1A545D4421369EA100C5133A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A545D4221369EA100C5133A /* LaunchScreen.storyboard */; };
 		1A545D4721369EA100C5133A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A545D4621369EA100C5133A /* main.m */; };
-		1A545D5121369EA100C5133A /* LWBaseVcTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A545D5021369EA100C5133A /* LWBaseVcTests.m */; };
-		1A545D5C21369EA100C5133A /* LWBaseVcUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A545D5B21369EA100C5133A /* LWBaseVcUITests.m */; };
 		1A545D6B2136A03A00C5133A /* XBBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A545D6A2136A03A00C5133A /* XBBaseViewController.m */; };
 		1A545D7421379A3400C5133A /* XBDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A545D7321379A3400C5133A /* XBDataSource.m */; };
 		1A545D772137D68C00C5133A /* LWTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A545D762137D68C00C5133A /* LWTableViewCell.m */; };
@@ -51,11 +49,7 @@
 		1A545D4521369EA100C5133A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1A545D4621369EA100C5133A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1A545D4C21369EA100C5133A /* LWBaseVcTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LWBaseVcTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1A545D5021369EA100C5133A /* LWBaseVcTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LWBaseVcTests.m; sourceTree = "<group>"; };
-		1A545D5221369EA100C5133A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1A545D5721369EA100C5133A /* LWBaseVcUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LWBaseVcUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1A545D5B21369EA100C5133A /* LWBaseVcUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LWBaseVcUITests.m; sourceTree = "<group>"; };
-		1A545D5D21369EA100C5133A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1A545D692136A03A00C5133A /* XBBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XBBaseViewController.h; sourceTree = "<group>"; };
 		1A545D6A2136A03A00C5133A /* XBBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XBBaseViewController.m; sourceTree = "<group>"; };
 		1A545D7221379A3300C5133A /* XBDataSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XBDataSource.h; sourceTree = "<group>"; };
@@ -97,8 +91,6 @@
 			isa = PBXGroup;
 			children = (
 				1A545D3621369E9F00C5133A /* LWBaseVc */,
-				1A545D4F21369EA100C5133A /* LWBaseVcTests */,
-				1A545D5A21369EA100C5133A /* LWBaseVcUITests */,
 				1A545D3521369E9F00C5133A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -116,6 +108,8 @@
 		1A545D3621369E9F00C5133A /* LWBaseVc */ = {
 			isa = PBXGroup;
 			children = (
+				1A545D822137F43C00C5133A /* Demo */,
+				1A545D812137F41700C5133A /* XBBase */,
 				1A545D3721369E9F00C5133A /* AppDelegate.h */,
 				1A545D3821369E9F00C5133A /* AppDelegate.m */,
 				1A545D3A21369E9F00C5133A /* ViewController.h */,
@@ -125,36 +119,32 @@
 				1A545D4221369EA100C5133A /* LaunchScreen.storyboard */,
 				1A545D4521369EA100C5133A /* Info.plist */,
 				1A545D4621369EA100C5133A /* main.m */,
+			);
+			path = LWBaseVc;
+			sourceTree = "<group>";
+		};
+		1A545D812137F41700C5133A /* XBBase */ = {
+			isa = PBXGroup;
+			children = (
+				1A545D7221379A3300C5133A /* XBDataSource.h */,
+				1A545D7321379A3400C5133A /* XBDataSource.m */,
+				1A545D7E2137F04E00C5133A /* XBDelegate.h */,
+				1A545D7F2137F04E00C5133A /* XBDelegate.m */,
+			);
+			path = XBBase;
+			sourceTree = "<group>";
+		};
+		1A545D822137F43C00C5133A /* Demo */ = {
+			isa = PBXGroup;
+			children = (
 				1A545D692136A03A00C5133A /* XBBaseViewController.h */,
 				1A545D6A2136A03A00C5133A /* XBBaseViewController.m */,
 				1A545D7B2137E0AB00C5133A /* LWModel.h */,
 				1A545D7C2137E0AB00C5133A /* LWModel.m */,
 				1A545D752137D68C00C5133A /* LWTableViewCell.h */,
 				1A545D762137D68C00C5133A /* LWTableViewCell.m */,
-				1A545D7221379A3300C5133A /* XBDataSource.h */,
-				1A545D7321379A3400C5133A /* XBDataSource.m */,
-				1A545D7E2137F04E00C5133A /* XBDelegate.h */,
-				1A545D7F2137F04E00C5133A /* XBDelegate.m */,
 			);
-			path = LWBaseVc;
-			sourceTree = "<group>";
-		};
-		1A545D4F21369EA100C5133A /* LWBaseVcTests */ = {
-			isa = PBXGroup;
-			children = (
-				1A545D5021369EA100C5133A /* LWBaseVcTests.m */,
-				1A545D5221369EA100C5133A /* Info.plist */,
-			);
-			path = LWBaseVcTests;
-			sourceTree = "<group>";
-		};
-		1A545D5A21369EA100C5133A /* LWBaseVcUITests */ = {
-			isa = PBXGroup;
-			children = (
-				1A545D5B21369EA100C5133A /* LWBaseVcUITests.m */,
-				1A545D5D21369EA100C5133A /* Info.plist */,
-			);
-			path = LWBaseVcUITests;
+			path = Demo;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -302,7 +292,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1A545D5121369EA100C5133A /* LWBaseVcTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -310,7 +299,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1A545D5C21369EA100C5133A /* LWBaseVcUITests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
