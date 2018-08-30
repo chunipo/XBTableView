@@ -19,6 +19,7 @@
 		1A545D7421379A3400C5133A /* XBDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A545D7321379A3400C5133A /* XBDataSource.m */; };
 		1A545D772137D68C00C5133A /* LWTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A545D762137D68C00C5133A /* LWTableViewCell.m */; };
 		1A545D7D2137E0AB00C5133A /* LWModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A545D7C2137E0AB00C5133A /* LWModel.m */; };
+		1A545D802137F04E00C5133A /* XBDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A545D7F2137F04E00C5133A /* XBDelegate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,8 @@
 		1A545D762137D68C00C5133A /* LWTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LWTableViewCell.m; sourceTree = "<group>"; };
 		1A545D7B2137E0AB00C5133A /* LWModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LWModel.h; sourceTree = "<group>"; };
 		1A545D7C2137E0AB00C5133A /* LWModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LWModel.m; sourceTree = "<group>"; };
+		1A545D7E2137F04E00C5133A /* XBDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XBDelegate.h; sourceTree = "<group>"; };
+		1A545D7F2137F04E00C5133A /* XBDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XBDelegate.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +133,8 @@
 				1A545D762137D68C00C5133A /* LWTableViewCell.m */,
 				1A545D7221379A3300C5133A /* XBDataSource.h */,
 				1A545D7321379A3400C5133A /* XBDataSource.m */,
+				1A545D7E2137F04E00C5133A /* XBDelegate.h */,
+				1A545D7F2137F04E00C5133A /* XBDelegate.m */,
 			);
 			path = LWBaseVc;
 			sourceTree = "<group>";
@@ -286,6 +291,7 @@
 				1A545D6B2136A03A00C5133A /* XBBaseViewController.m in Sources */,
 				1A545D772137D68C00C5133A /* LWTableViewCell.m in Sources */,
 				1A545D7D2137E0AB00C5133A /* LWModel.m in Sources */,
+				1A545D802137F04E00C5133A /* XBDelegate.m in Sources */,
 				1A545D4721369EA100C5133A /* main.m in Sources */,
 				1A545D7421379A3400C5133A /* XBDataSource.m in Sources */,
 				1A545D3921369E9F00C5133A /* AppDelegate.m in Sources */,

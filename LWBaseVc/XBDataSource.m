@@ -10,6 +10,9 @@
 
 @interface XBDataSource () 
 
+@property (nonatomic, strong) NSMutableArray *array;
+
+@property (nonatomic, strong) NSString *cellIdentifier;
 
 @end
 

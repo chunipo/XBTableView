@@ -8,14 +8,20 @@
 
 #import "XBBaseViewController.h"
 #import "XBDataSource.h"
+#import "XBDelegate.h"
 #import "LWTableViewCell.h"
 #import "LWModel.h"
+
+
 
 @interface XBBaseViewController ()<UITableViewDelegate>
 
 @property (nonatomic, strong) XBDataSource *dataSource;
+@property (nonatomic, strong) XBDelegate *delegate;
 
 @end
+
+static NSString * const cell = @"isCell";
 
 @implementation XBBaseViewController
 
@@ -33,16 +39,12 @@
     [self.view addSubview:self.tableView];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
+- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    NSLog(@"%@",self);
+    
 }
-
-
-
-
-
-
 
 #pragma mark - lazy load
 - (NSMutableArray *)tablewArray{
@@ -62,9 +64,10 @@
 - (UITableView *)tableView{
     if (!_tableView){
         _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 90, self.view.frame.size.width, self.view.frame.size.height-90)];
-        [_tableView registerClass:[LWTableViewCell class] forCellReuseIdentifier:@"idd"];
+        [_tableView registerClass:[LWTableViewCell class] forCellReuseIdentifier:cell];
         _tableView.dataSource = self.dataSource;
-        _tableView.delegate = self;
+        _tableView.delegate = self.delegate;
+        self.delegate.viewController = self;
         _tableView.rowHeight = 100;
     }
     return _tableView;
@@ -72,9 +75,16 @@
 
 - (XBDataSource *)dataSource{
     if (!_dataSource){
-        _dataSource = [[XBDataSource alloc]initWithIdentifier:@"idd"];
+        _dataSource = [[XBDataSource alloc]initWithIdentifier:cell];
     }
     return _dataSource;
+}
+
+- (XBDelegate *)delegate{
+    if (!_delegate){
+        _delegate = [[XBDelegate alloc]init];
+    }
+    return _delegate;
 }
 
 @end

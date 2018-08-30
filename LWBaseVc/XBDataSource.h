@@ -10,13 +10,12 @@
 
 typedef void (^CellRoom)(id cell, id model, NSIndexPath * indexPath);
 
+//适合一级数组
 @interface XBDataSource : NSObject <UITableViewDataSource>
 
+/* 创建方法 */
 - (id)initWithIdentifier:(NSString *)identifier;
 
-@property (nonatomic, strong) NSMutableArray *array;
-
-@property (nonatomic, strong) NSString *cellIdentifier;
 
 @property (nonatomic, copy) CellRoom cellRoom;
 
